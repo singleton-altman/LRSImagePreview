@@ -18,24 +18,37 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+  图片预览
                        DESC
 
-  s.homepage         = 'https://github.com/刘sama/LRSImagePreview'
+  s.homepage         = 'https://aioser.github.io'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { '刘sama' => 'junchen.liu@jiamiantech.com' }
-  s.source           = { :git => 'https://github.com/刘sama/LRSImagePreview.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/aioser/LRSImagePreview.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '9.0'
-
-  s.source_files = 'LRSImagePreview/Classes/**/*'
-  
+  s.ios.deployment_target = '11.0'
+  s.subspec 'Extern' do |extern|
+    extern.source_files = 'LRSImagePreview/Classes/Extern/**/*'
+  end
+  s.subspec 'Helper' do |helper|
+    helper.source_files = 'LRSImagePreview/Classes/Helper/**/*'
+    helper.frameworks = 'Photos'
+  end
+  s.subspec 'Core' do |core|
+    core.source_files = 'LRSImagePreview/Classes/Core/**/*'
+    # loader.resource_bundles = {
+    #   'LRSEntranceSourceLoader' => ['LRSEntranceSourceLoader/Assets/*']
+    # }
+    core.dependency 'SDWebImage', '~> 5.0'
+    # loader.dependency 'BlocksKit/Core', '~> 2.2.5'
+    core.dependency 'LRSImagePreview/Extern'
+    core.dependency 'LRSImagePreview/Helper'
+  end
   # s.resource_bundles = {
   #   'LRSImagePreview' => ['LRSImagePreview/Assets/*.png']
   # }
-
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'

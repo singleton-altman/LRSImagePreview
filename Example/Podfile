@@ -1,10 +1,14 @@
+source 'https://github.com/CocoaPods/Specs.git'
+source 'git@coding.jiamiantech.com:ce/jiamianSpecs.git'
+
 use_frameworks!
 
-platform :ios, '9.0'
+platform :ios, '11.0'
 
 target 'LRSImagePreview_Example' do
   pod 'LRSImagePreview', :path => '../'
-
+  pod 'TZImagePickerController'
+  pod 'BlocksKit'
   target 'LRSImagePreview_Tests' do
     inherit! :search_paths
 

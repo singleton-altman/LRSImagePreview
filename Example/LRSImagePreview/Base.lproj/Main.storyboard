@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="whP-gf-Uak">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19150" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="xso-Fk-Jpu">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19134"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -20,12 +20,172 @@
                     <view key="view" contentMode="scaleToFill" id="TpU-gO-2f1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WBM-2v-L2l" customClass="SDAnimatedImageView">
+                                <rect key="frame" x="67" y="213" width="241" height="241"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="241" id="TsI-Yh-u62"/>
+                                    <constraint firstAttribute="width" secondItem="WBM-2v-L2l" secondAttribute="height" id="jOI-JE-RU4"/>
+                                </constraints>
+                                <imageReference key="image" image="avatar"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="WBM-2v-L2l" firstAttribute="centerY" secondItem="TpU-gO-2f1" secondAttribute="centerY" id="Bjy-hE-JdY"/>
+                            <constraint firstItem="WBM-2v-L2l" firstAttribute="centerX" secondItem="TpU-gO-2f1" secondAttribute="centerX" id="UQQ-Ke-wFd"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Zuy-wm-Zbf">
+                        <barButtonItem key="rightBarButtonItem" title="选择图片" id="3E8-Rk-eOp">
+                            <connections>
+                                <action selector="selectImages:" destination="whP-gf-Uak" id="knP-Pj-Qs7"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="imageView" destination="WBM-2v-L2l" id="HNG-0t-WNx"/>
+                        <outlet property="imageViewRatio" destination="jOI-JE-RU4" id="JgG-fn-xfO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tc2-Qw-aMS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="305" y="433"/>
+            <point key="canvasLocation" x="1740" y="-271"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="QWj-en-1zf">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ts9-8F-Gci" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="0De-qC-VsP"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="EXT-JY-qLF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="whP-gf-Uak" kind="relationship" relationship="rootViewController" id="2hh-2d-vc1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Km-cG-mr6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1092" y="-271"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="dXF-Xs-PlM">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="xso-Fk-Jpu" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0YZ-Sv-iAz">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Ts9-8F-Gci" kind="relationship" relationship="viewControllers" id="77t-N9-T2x"/>
+                        <segue destination="t8H-sV-xw7" kind="relationship" relationship="viewControllers" id="Ln8-zh-VAv"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7EJ-sS-kcz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="304.80000000000001" y="432.23388305847078"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="ij2-Ih-HnU">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="t8H-sV-xw7" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="uo9-MK-xQh"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="id4-tJ-V3d">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="fcs-0K-opT" kind="relationship" relationship="rootViewController" id="6Cs-g9-5bD"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PrJ-xX-KWS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1092" y="708"/>
+        </scene>
+        <!--Mutable Images View Controller-->
+        <scene sceneID="3t0-gi-xIB">
+            <objects>
+                <viewController id="fcs-0K-opT" customClass="LRSMutableImagesViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="h7S-hn-ldi"/>
+                        <viewControllerLayoutGuide type="bottom" id="JId-6I-wMs"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wMT-Cc-XG2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="rpi-77-Liz">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="LRSMutableImageTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LRSMutableImageTableViewCell" id="FEj-Mf-afi" customClass="LRSMutableImageTableViewCell">
+                                        <rect key="frame" x="0.0" y="44.5" width="375" height="44.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FEj-Mf-afi" id="k0P-JC-2YD">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HQZ-cB-cFZ" customClass="SDAnimatedImageView">
+                                                    <rect key="frame" x="16" y="0.0" width="184" height="44.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="184" id="BIp-Mz-iB6"/>
+                                                        <constraint firstAttribute="height" constant="44" id="qbn-wa-2eN"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="HQZ-cB-cFZ" secondAttribute="bottom" id="MJ3-gK-6a7"/>
+                                                <constraint firstItem="HQZ-cB-cFZ" firstAttribute="leading" secondItem="k0P-JC-2YD" secondAttribute="leading" constant="16" id="iQF-eP-sgx"/>
+                                                <constraint firstItem="HQZ-cB-cFZ" firstAttribute="top" secondItem="k0P-JC-2YD" secondAttribute="top" id="nEa-8F-DJD"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="imageH" destination="qbn-wa-2eN" id="FJt-HE-5gB"/>
+                                            <outlet property="imageIns" destination="HQZ-cB-cFZ" id="ztc-ZZ-bw1"/>
+                                            <outlet property="left" destination="iQF-eP-sgx" id="Olx-wM-hzn"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="fcs-0K-opT" id="yJ7-xE-rtM"/>
+                                    <outlet property="delegate" destination="fcs-0K-opT" id="Yst-iH-LOt"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="rpi-77-Liz" firstAttribute="top" secondItem="wMT-Cc-XG2" secondAttribute="top" id="CAI-C5-6DF"/>
+                            <constraint firstAttribute="bottom" secondItem="rpi-77-Liz" secondAttribute="bottom" id="h2k-c4-k5p"/>
+                            <constraint firstItem="rpi-77-Liz" firstAttribute="leading" secondItem="wMT-Cc-XG2" secondAttribute="leading" id="la9-4C-3gh"/>
+                            <constraint firstAttribute="trailing" secondItem="rpi-77-Liz" secondAttribute="trailing" id="qOB-R3-psV"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="d3P-sM-Jj8">
+                        <barButtonItem key="rightBarButtonItem" title="添加素材" id="dAy-nA-pXT">
+                            <connections>
+                                <action selector="selectImages:" destination="fcs-0K-opT" id="59Y-Sb-Pr8"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="rpi-77-Liz" id="fvk-W7-BNu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jDp-lt-zoe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1796" y="706.59670164917543"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="avatar" width="644" height="668"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

@@ -1,0 +1,79 @@
+PODS:
+  - BlocksKit (2.2.5):
+    - BlocksKit/All (= 2.2.5)
+  - BlocksKit/All (2.2.5):
+    - BlocksKit/Core
+    - BlocksKit/DynamicDelegate
+    - BlocksKit/MessageUI
+    - BlocksKit/UIKit
+  - BlocksKit/Core (2.2.5)
+  - BlocksKit/DynamicDelegate (2.2.5)
+  - BlocksKit/MessageUI (2.2.5):
+    - BlocksKit/Core
+    - BlocksKit/DynamicDelegate
+  - BlocksKit/UIKit (2.2.5):
+    - BlocksKit/Core
+    - BlocksKit/DynamicDelegate
+  - Expecta (1.0.6)
+  - "Expecta+Snapshots (3.1.1)":
+    - Expecta (~> 1.0)
+    - FBSnapshotTestCase/Core (~> 2.0)
+    - Specta (~> 1.0)
+  - FBSnapshotTestCase (2.1.4):
+    - FBSnapshotTestCase/SwiftSupport (= 2.1.4)
+  - FBSnapshotTestCase/Core (2.1.4)
+  - FBSnapshotTestCase/SwiftSupport (2.1.4):
+    - FBSnapshotTestCase/Core
+  - LRSImagePreview (0.1.0):
+    - LRSImagePreview/Core (= 0.1.0)
+    - LRSImagePreview/Extern (= 0.1.0)
+    - LRSImagePreview/Helper (= 0.1.0)
+  - LRSImagePreview/Core (0.1.0):
+    - LRSImagePreview/Extern
+    - LRSImagePreview/Helper
+    - SDWebImage (~> 5.0)
+  - LRSImagePreview/Extern (0.1.0)
+  - LRSImagePreview/Helper (0.1.0)
+  - SDWebImage (5.11.1):
+    - SDWebImage/Core (= 5.11.1)
+  - SDWebImage/Core (5.11.1)
+  - Specta (1.0.7)
+  - TZImagePickerController (3.6.4)
+
+DEPENDENCIES:
+  - BlocksKit
+  - Expecta
+  - "Expecta+Snapshots"
+  - FBSnapshotTestCase
+  - LRSImagePreview (from `../`)
+  - Specta
+  - TZImagePickerController
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - BlocksKit
+    - TZImagePickerController
+  trunk:
+    - Expecta
+    - "Expecta+Snapshots"
+    - FBSnapshotTestCase
+    - SDWebImage
+    - Specta
+
+EXTERNAL SOURCES:
+  LRSImagePreview:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  BlocksKit: 7f422b971407001178d181a43b99014ea2591fe6
+  Expecta: 3b6bd90a64b9a1dcb0b70aa0e10a7f8f631667d5
+  "Expecta+Snapshots": dcff217eef506dabd6dfdc7864ea2da321fafbb8
+  FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
+  LRSImagePreview: 93c61d3a5d1d9fffdbcd464b6090c51747fcd980
+  SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
+  Specta: 3e1bd89c3517421982dc4d1c992503e48bd5fe66
+  TZImagePickerController: 1cc39ec0454d6e94d0397418953164d7aa631719
+
+PODFILE CHECKSUM: 87456bf8061721ba9b075fa7b627c30f81405db6
+
+COCOAPODS: 1.10.2
