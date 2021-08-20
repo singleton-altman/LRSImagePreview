@@ -34,9 +34,9 @@
     [view.containerView addSubview:view.imageView];
     view.imageView.image = configure.placeholderImage;
     if (configure.hightURL) {
-        UIActivityIndicatorView *indicator = [[UIActivityIndicatorView alloc] initWithFrame:view.bounds];
+        UIActivityIndicatorView *indicator = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(frame.size.width / 2 + frame.origin.x, frame.size.height / 2 + frame.origin.y, 40, 40)];
         indicator.hidesWhenStopped = true;
-        [view addSubview:indicator];
+        [view.imageView addSubview:indicator];
         [indicator startAnimating];
         [[SDWebImageManager sharedManager] loadImageWithURL:configure.hightURL options:(SDWebImageHighPriority | SDWebImageDelayPlaceholder) progress:nil completed:^(UIImage * _Nullable image, NSData * _Nullable data, NSError * _Nullable error, SDImageCacheType cacheType, BOOL finished, NSURL * _Nullable imageURL) {
             if (finished && image) {
