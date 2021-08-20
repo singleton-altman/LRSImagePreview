@@ -134,7 +134,7 @@ CGFloat image_previewer_screen_height(void) {
     
     self.scrollView.contentSize = CGSizeMake(self.zoomingViews.count * image_previewer_screen_width(), self.scrollView.contentSize.height);
     
-    CGFloat insertWidth = layoutViews.count * image_previewer_screen_width();
+    CGFloat insertWidth = layoutViews.count * image_previewer_screen_width() + self.scrollView.contentOffset.x;
     self.scrollView.contentOffset = CGPointMake(insertWidth, 0);
     
     [self handleIndexLabel_];
