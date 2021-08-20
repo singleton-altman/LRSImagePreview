@@ -212,7 +212,7 @@ CGFloat image_previewer_screen_height(void) {
         CGFloat H = ratio * size.height;
         selectedView.frame = CGRectMake((image_previewer_screen_width() - W) / 2, (image_previewer_screen_height() - H) / 2, W, H);
         selectedView.alpha = 1;
-        self.saveImageButton.alpha = 1;
+        self.saveImageButton.alpha = self.isSaveButtonShow ? 1: 0;
     } completion:animationCompletion];
 }
 
@@ -327,7 +327,7 @@ CGFloat image_previewer_screen_height(void) {
         _saveImageButton.layer.cornerRadius = 3.0f;
         _saveImageButton.layer.masksToBounds = YES;
         [_saveImageButton addTarget:self action:@selector(savePhoto) forControlEvents:(UIControlEventTouchUpInside)];
-        _saveImageButton.hidden = true;
+        _saveImageButton.alpha = 0;
     }
     return _saveImageButton;
 }
