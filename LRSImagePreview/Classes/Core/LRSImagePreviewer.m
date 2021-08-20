@@ -37,6 +37,8 @@ CGFloat image_previewer_screen_height(void) {
 
 + (instancetype)previewWithDelegate:(id<LRSImageViewerDelegate>)delegate toastDelegate:(id<LRSImageViewerToastDelegate>)toastDelegate {
     LRSImagePreviewer *previewer = [[LRSImagePreviewer alloc] initWithFrame:UIApplication.sharedApplication.delegate.window.bounds];
+    previewer.delegate = delegate;
+    previewer.toastDelegate = toastDelegate;
     return previewer;
 }
 
@@ -59,6 +61,7 @@ CGFloat image_previewer_screen_height(void) {
 - (void)_setup {
     self.backgroundColor = [UIColor blackColor];
     self.backgroundScale = 0.95;
+    self.isSaveButtonShow = true;
     CGRect scrollViewFrame = self.bounds;
     if (_scrollView == nil) {
         _scrollView = [[UIScrollView alloc] initWithFrame:scrollViewFrame];

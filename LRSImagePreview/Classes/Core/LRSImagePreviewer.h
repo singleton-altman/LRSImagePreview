@@ -47,7 +47,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) BOOL disableTouchDismiss;
 
 /// 控制保存按钮是否显示
-/// 默认false
+/// 默认true
 @property (nonatomic, assign) BOOL isSaveButtonShow;
 
 /// 是否显示当前页数
@@ -62,8 +62,8 @@ NS_ASSUME_NONNULL_BEGIN
 /// 初始化方法, 默认frame: UIApplication.sharedApplication.delegate.window.bounds
 /// @param delegate delegate
 /// @param toastDelegate toastDelegate
-+ (instancetype)previewWithDelegate:(id<LRSImageViewerDelegate>)delegate
-                      toastDelegate:(id<LRSImageViewerToastDelegate>)toastDelegate;
++ (instancetype)previewWithDelegate:(nullable id<LRSImageViewerDelegate>)delegate
+                      toastDelegate:(nullable id<LRSImageViewerToastDelegate>)toastDelegate;
 
 /// 展示
 /// @param configures configures
