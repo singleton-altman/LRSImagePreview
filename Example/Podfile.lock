@@ -24,16 +24,16 @@ PODS:
   - FBSnapshotTestCase/Core (2.1.4)
   - FBSnapshotTestCase/SwiftSupport (2.1.4):
     - FBSnapshotTestCase/Core
-  - LRSImagePreview (0.1.0):
-    - LRSImagePreview/Core (= 0.1.0)
-    - LRSImagePreview/Extern (= 0.1.0)
-    - LRSImagePreview/Helper (= 0.1.0)
-  - LRSImagePreview/Core (0.1.0):
+  - LRSImagePreview (0.1.5):
+    - LRSImagePreview/Core (= 0.1.5)
+    - LRSImagePreview/Extern (= 0.1.5)
+    - LRSImagePreview/Helper (= 0.1.5)
+  - LRSImagePreview/Core (0.1.5):
     - LRSImagePreview/Extern
     - LRSImagePreview/Helper
     - SDWebImage (~> 5.0)
-  - LRSImagePreview/Extern (0.1.0)
-  - LRSImagePreview/Helper (0.1.0)
+  - LRSImagePreview/Extern (0.1.5)
+  - LRSImagePreview/Helper (0.1.5)
   - SDWebImage (5.11.1):
     - SDWebImage/Core (= 5.11.1)
   - SDWebImage/Core (5.11.1)
@@ -69,7 +69,7 @@ SPEC CHECKSUMS:
   Expecta: 3b6bd90a64b9a1dcb0b70aa0e10a7f8f631667d5
   "Expecta+Snapshots": dcff217eef506dabd6dfdc7864ea2da321fafbb8
   FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
-  LRSImagePreview: 93c61d3a5d1d9fffdbcd464b6090c51747fcd980
+  LRSImagePreview: 89b496b1e6ae0565068544af84cc44d75b5d3f4d
   SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
   Specta: 3e1bd89c3517421982dc4d1c992503e48bd5fe66
   TZImagePickerController: 1cc39ec0454d6e94d0397418953164d7aa631719

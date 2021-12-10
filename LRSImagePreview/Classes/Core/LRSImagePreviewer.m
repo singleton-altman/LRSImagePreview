@@ -222,8 +222,8 @@ CGFloat image_previewer_screen_height(void) {
     if ([self.delegate respondsToSelector:@selector(imageViewer:willDismissWithSelectedView:)]) {
         [self.delegate imageViewer:self willDismissWithSelectedView:currentView];
     }
-    self.saveImageButton.hidden = YES;
-    self.numberLabel.hidden = YES;
+    self.saveImageButton.alpha = 0;
+    self.numberLabel.alpha = 0;
 }
 
 - (void)dismissWithAnimate {
